@@ -6,16 +6,16 @@ namespace ChallengeApp
         private List<int> score = new List<int>();
         public Employee(string name, string surname, string age)  // konstruktor
         {
-            this.name1 = name;
-            this.surname1 = surname;
-            this.age1 = age;
+            this.Name = name;
+            this.Surname = surname;
+            this.Age = age;
 
         }
-        public string name1 { get; set; } // property, pola
-        public string surname1 { get; set; }
-        public string age1 { get; set; }
+        public string Name { get; set; } // property, pola
+        public string Surname { get; set; }
+        public string Age { get; set; }
 
-        public int Result1
+        public int Result
         {
             get
             {

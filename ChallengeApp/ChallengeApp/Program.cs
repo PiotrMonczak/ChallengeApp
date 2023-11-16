@@ -28,13 +28,13 @@ Employee userWithMaxResult = null;
 
 foreach (var worker in Workers)
 {
-    if ( worker.Result1 > MaxResult) 
+    if ( worker.Result > MaxResult) 
     {
         userWithMaxResult = worker;
-        MaxResult = worker.Result1;
+        MaxResult = worker.Result;
     }
 }
 
 
-Console.WriteLine(userWithMaxResult.name1);
+Console.WriteLine(userWithMaxResult.Name);
 
