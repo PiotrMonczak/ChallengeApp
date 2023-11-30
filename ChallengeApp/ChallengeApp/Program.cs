@@ -9,24 +9,22 @@ var employee = new Employee();
 
 var YesOrNot = true;
 
-while (YesOrNot)
+while (true)
 {
-    Console.WriteLine("Czy chcesz dodać nową ocenę pracownika T/N: ");
-    
-    var YoN = Console.ReadLine();
-    if (YoN == "T" || YoN == "t")
+    Console.WriteLine("Podaj ocenę pracownika");
+    var input = Console.ReadLine();
+    if (input == "q")
     {
-        Console.WriteLine("Podaj ocenę pracownika: ");
-        var input = Console.ReadLine();
+        break;
+    }
+
+    try
+    {
         employee.AddGrade(input);
     }
-    else if (YoN == "n" || YoN == "N")
+    catch (Exception e)
     {
-        YesOrNot = false;
-    }
-    else 
-    {
-        Console.WriteLine("Niewłasciwa litera, spróbuj jeszcze raz: ");
+        Console.WriteLine($"Exeption catched: {e.Message}" );
     }
 }
 

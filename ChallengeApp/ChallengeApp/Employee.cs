@@ -25,7 +25,7 @@ namespace ChallengeApp
             }
             else 
             {
-                Console.WriteLine("Invalide grade value");
+                throw new Exception("Invalide grade value");
             }
         }
 
@@ -41,23 +41,26 @@ namespace ChallengeApp
             {
                 case 'A':
                 case 'a':
-                    this.grades.Add(100);
+                    this.AddGrade(100);
                     break;
                 case 'B':
-                    this.grades.Add(80);
+                case 'b':
+                    this.AddGrade(80);
                     break;
                 case 'C':
-                    this.grades.Add(60);
+                case 'c':
+                    this.AddGrade(60);
                     break;
                 case 'D':
-                    this.grades.Add(40);
+                case 'd':
+                    this.AddGrade(40);
                     break;
                 case 'E':
-                    this.grades.Add(20);
+                case 'e':
+                    this.AddGrade(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong Letter");
-                    break;
+                    throw new Exception("Wrong Letter");
             }
         }
         public void AddGrade(string grade)
@@ -66,9 +69,13 @@ namespace ChallengeApp
             {
                 this.AddGrade(result);
             }
-            else
+            else if (char.TryParse(grade, out char char_result))
             {
-                Console.WriteLine("Invalide grade value");
+                this.AddGrade(char_result);
+            }
+
+            {
+                throw new Exception("String is not float");
             }
         }
 
