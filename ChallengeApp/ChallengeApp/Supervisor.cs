@@ -4,25 +4,51 @@ namespace ChallengeApp
 {
     internal class Supervisor : IEmployee
     {
-        public string Name => throw new NotImplementedException();
+        public string Name => "Ania";
 
-        public string Surname => throw new NotImplementedException();
+        public string Surname => "AniaAnia";
 
-        public string Gender => throw new NotImplementedException();
+        public string Gender => "Female";
 
         public void AddGrade(double grade)
         {
-            throw new NotImplementedException();
+            float gradesAsFloat = (float)grade;
+            this.AddGrade(gradesAsFloat);
         }
 
         public void AddGrade(int grade)
         {
-            throw new NotImplementedException();
+            float gradesAsFloat = grade;
+            this.AddGrade(gradesAsFloat);
         }
 
         public void AddGrade(char grade)
         {
-            throw new NotImplementedException();
+            switch (grade)
+            {
+                case 'A':
+                case 'a':
+                    this.AddGrade(100);
+                    break;
+                case 'B':
+                case 'b':
+                    this.AddGrade(80);
+                    break;
+                case 'C':
+                case 'c':
+                    this.AddGrade(60);
+                    break;
+                case 'D':
+                case 'd':
+                    this.AddGrade(40);
+                    break;
+                case 'E':
+                case 'e':
+                    this.AddGrade(20);
+                    break;
+                default:
+                    throw new Exception("Wrong Letter");
+            }
         }
 
         public void AddGrade(string grade)
@@ -76,7 +102,19 @@ namespace ChallengeApp
                     this.AddGrade(0);
                     break;
                 default:
-                    throw new Exception("Wrong Letter");
+                    if (float.TryParse(grade, out float result))
+                    {
+                        this.AddGrade(result);
+                    }
+                    else if (char.TryParse(grade, out char char_result))
+                    {
+                        this.AddGrade(char_result);
+                    }
+                    
+                    {
+                        throw new Exception("String is not float");
+                    }
+                   
             }
 
         }
