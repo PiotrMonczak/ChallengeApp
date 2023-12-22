@@ -4,11 +4,30 @@ namespace ChallengeApp
 {
     internal class Supervisor : IEmployee
     {
-        public string Name => "Ania";
+        private List<float> grades = new List<float>();
 
-        public string Surname => "AniaAnia";
+        public Supervisor(string name, string surname)
 
-        public string Gender => "Female";
+        {
+            this.Name = name;
+            this.Surname = surname;
+
+        }
+        public string Name { get; set; }
+
+        public string Surname { get; set; }
+
+        public void AddGrade(float grade)
+        {
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                throw new Exception("Invalide grade value");
+            }
+        }
 
         public void AddGrade(double grade)
         {
@@ -105,12 +124,14 @@ namespace ChallengeApp
                     if (float.TryParse(grade, out float result))
                     {
                         this.AddGrade(result);
+                        break;
                     }
                     else if (char.TryParse(grade, out char char_result))
                     {
                         this.AddGrade(char_result);
+                        break;
                     }
-                    
+                    else
                     {
                         throw new Exception("String is not float");
                     }

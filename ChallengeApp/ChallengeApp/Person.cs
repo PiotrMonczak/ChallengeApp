@@ -2,22 +2,17 @@
 
 namespace ChallengeApp
 {
-    public class Person
+    public abstract class Person
     {
 
-        public Person()
-        {
-
-        }
-        public Person(string name, string surname, string gender)
+        public Person(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
-            this.Gender = gender;
         }
         public string Name { get; private set; }
         public string Surname { get; private set; }
-        public string Gender { get; private set; }
+        
     }
     
 }

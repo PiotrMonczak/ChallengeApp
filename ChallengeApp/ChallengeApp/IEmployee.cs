@@ -8,7 +8,8 @@ namespace ChallengeApp
 
         public string Surname { get; }
 
-        public string Gender { get; }
+
+        void AddGrade(float grade);
 
         void AddGrade(double grade);
 

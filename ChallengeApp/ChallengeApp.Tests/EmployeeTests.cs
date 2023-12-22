@@ -8,7 +8,7 @@ namespace ChallengeApp.Tests
         public void ValueMax_ShouldBeEqual()
         {
             // arrange przygotowanie
-            var emp1 = new Employee();
+            var emp1 = new Employee("Ania", "AniaAnia");
             emp1.AddGrade(41);
             emp1.AddGrade(23);
             emp1.AddGrade(17);
@@ -24,7 +24,7 @@ namespace ChallengeApp.Tests
         public void ValueMin_ShouldBeEqual()
         {
             // arrange przygotowanie
-            var emp1 = new Employee();
+            var emp1 = new Employee("Ania", "AniaAnia");
             emp1.AddGrade(34);
             emp1.AddGrade(51);
             emp1.AddGrade(7);
@@ -40,7 +40,7 @@ namespace ChallengeApp.Tests
         public void ValueAverage_ShouldBeEqual()
         {
             // arrange przygotowanie
-            var emp1 = new Employee();
+            var emp1 = new Employee("Ania", "AniaAnia");
             emp1.AddGrade(24);
             emp1.AddGrade(31);
             emp1.AddGrade(54);
@@ -56,7 +56,7 @@ namespace ChallengeApp.Tests
         public void AverageLetter_ShouldBeEqualB()
         {
             // arrange przygotowanie
-            var emp1 = new Employee();
+            var emp1 = new Employee("Ania", "AniaAnia");
             emp1.AddGrade(24);
             emp1.AddGrade(31);
             emp1.AddGrade(54);

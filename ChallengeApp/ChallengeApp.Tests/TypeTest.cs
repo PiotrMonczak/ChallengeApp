@@ -43,8 +43,8 @@ namespace ChallengeApp.Tests
         public void CompareUserName_ScouldNotBeTheSame()
         {
             // arrange
-            var empl1 = GetEmployee("Ania", "AniaAnia");
-            var empl2 = GetEmployee("Kasia", "KasiaKasia");
+            var empl1 = GetEmployee("Ania", "AniaAnia", "K");
+            var empl2 = GetEmployee("Kasia", "KasiaKasia", "K");
 
             //act
 
@@ -52,9 +52,9 @@ namespace ChallengeApp.Tests
             Assert.AreNotEqual(empl1.Name, empl2.Name);
         }
 
-        private Employee GetEmployee(string name, string username)
+        private Employee GetEmployee(string name, string username, string gender)
         {
-            return new Employee(name, username);
+            return new Employee(name, username, gender);
         }
     }
 }

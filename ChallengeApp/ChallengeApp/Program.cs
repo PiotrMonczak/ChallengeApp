@@ -5,28 +5,30 @@ Console.WriteLine("Witamy w programie oceny pracownika");
 Console.WriteLine("------------------------------------");
 Console.WriteLine();
 
-var employee = new Employee();
+var employee = new EmployeeInFile("Ania", "AniaAnia");
+employee.AddGrade(34);
+employee.AddGrade(12);
+employee.AddGrade(21);
+employee.AddGrade(0.5f);
 
-var YesOrNot = true;
+//while (true)
+//{
+//    Console.WriteLine("Podaj ocenę pracownika");
+//    var input = Console.ReadLine();
+//    if (input == "q")
+//    {
+//        break;
+//    }
 
-while (true)
-{
-    Console.WriteLine("Podaj ocenę pracownika");
-    var input = Console.ReadLine();
-    if (input == "q")
-    {
-        break;
-    }
-
-    try
-    {
-        employee.AddGrade(input);
-    }
-    catch (Exception e)
-    {
-        Console.WriteLine($"Exeption catched: {e.Message}" );
-    }
-}
+//    try
+//    {
+//        employee.AddGrade(input);
+//    }
+//    catch (Exception e)
+//    {
+//        Console.WriteLine($"Exeption catched: {e.Message}");
+//    }
+//}
 
 var statistics = employee.GetStatistics();
 
